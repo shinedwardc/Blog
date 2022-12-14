@@ -10,21 +10,26 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './Components/Header';
 import Contact from './Components/Contact';
 import About from './Components/About';
-import Something from './Components/Something';
+import Post from './Components/Post';
+import Footer from './Components/Footer';
+
+import posts from './Modules/Posts'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <div>
       <Header />
-      </div>
       <Routes>
         <Route exact path = "/" element = {<App/>} />
         <Route path = "/contact" element = {<Contact/>} />
         <Route path = "/about" element = {<About/>} />
-        <Route path = "/Something" element = {<Something/>} />
+        {posts.map((post) => {
+          //console.log("/post/" + post.key.toString())
+          return <Route key = {post.key} path = {"/post/" + post.key.toString()} element = {<Post post = {post}/>} />
+        })}
       </Routes>
+      <Footer />
     </BrowserRouter>
   </React.StrictMode>
 );

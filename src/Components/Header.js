@@ -4,10 +4,20 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
 
+import posts from '../Modules/Posts'
+
 const Header = () => {
+
+  const PostLink = (post) => {
+    //console.log(post.key.toString());
+    let link = "/post/" + post.key.toString();
+    //console.log(link);
+    return link;
+  }
+
   return ( 
     <Navbar bg="dark" variant = "dark" expand="lg">
-        <Navbar.Brand>Blog</Navbar.Brand>
+        <Navbar.Brand style = {{padding: 20}}>Blog</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto my-2 my-lg-0"
@@ -23,9 +33,12 @@ const Header = () => {
               <Nav.Link>About</Nav.Link>
             </LinkContainer>
             <NavDropdown title = {<MoreHorizRoundedIcon/>} id = "collapsible-nav-dropdown">
-              <LinkContainer to = "/Something">
-                <NavDropdown.Item>Something</NavDropdown.Item>
-              </LinkContainer>
+              {posts.map((post) => (
+                //console.log(post.key);
+                <LinkContainer key = {post.key} to = {PostLink(post)}>
+                  <NavDropdown.Item key = {post.key}>{post.title}</NavDropdown.Item>  
+                </LinkContainer>
+              ))}
             </NavDropdown>
           </Nav>
           </Navbar.Collapse>
