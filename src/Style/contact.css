@@ -1,0 +1,28 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.form {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin: 200px;
+
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5em;
+  }
+  
+  
+  form textarea {
+    width: 100%;
+    padding: 0.5em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+  }
+  
+  form .error {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 0.5em;
+  }
