@@ -16,6 +16,14 @@ const Contact = () => {
     });
     const onSubmit = (data) => {
         console.log(data);
+        fetch('http://localhost:5000/contact', {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
     }
     return (
         <div className = "form">
