@@ -1,19 +1,19 @@
 import { LinkContainer } from 'react-router-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
+//import NavDropdown from 'react-bootstrap/NavDropdown';
+//import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
 
-import posts from '../Modules/Posts'
+//import posts from '../Modules/Posts'
 
 const Header = () => {
 
-  const PostLink = (post) => {
-    //console.log(post.key.toString());
-    let link = "/post/" + post.key.toString();
-    //console.log(link);
-    return link;
-  }
+  // const PostLink = (post) => {
+  //   console.log(post.key.toString());
+  //   let link = "/post/" + post.key.toString();
+  //   console.log(link);
+  //   return link;
+  // }
 
   return ( 
     <Navbar bg="dark" variant = "dark" expand="lg">
@@ -32,14 +32,16 @@ const Header = () => {
             <LinkContainer to="/about">
               <Nav.Link>About</Nav.Link>
             </LinkContainer>
-            <NavDropdown title = {<MoreHorizRoundedIcon/>} id = "collapsible-nav-dropdown">
+            {/* <NavDropdown title = {<MoreHorizRoundedIcon/>} id = "collapsible-nav-dropdown">
               {posts.map((post) => (
-                //console.log(post.key);
                 <LinkContainer key = {post.key} to = {PostLink(post)}>
                   <NavDropdown.Item key = {post.key}>{post.title}</NavDropdown.Item>  
                 </LinkContainer>
               ))}
-            </NavDropdown>
+            </NavDropdown> */}
+            <LinkContainer to = "/posts">
+              <Nav.Link>Posts</Nav.Link>
+            </LinkContainer>
           </Nav>
           </Navbar.Collapse>
 

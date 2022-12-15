@@ -10,10 +10,29 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './Components/Header';
 import Contact from './Components/Contact';
 import About from './Components/About';
-import Post from './Components/Post';
+//import Post from './Components/Post';
+import Posts from './Components/Posts';
 import Footer from './Components/Footer';
 
-import posts from './Modules/Posts'
+//import posts from './Modules/Posts'
+// const FetchPosts = () => {
+
+//   const [data, setData] = useState(null);
+
+//   useEffect(() => {
+//     fetch('localhost:5000/posts')
+//     .then(response => response.json())
+//     .then((data) => {
+//         console.log(data);
+//         setData(data);
+//     })
+//     .catch((e) => {
+//         console.error(`An error occurred: ${e}`);
+//     })
+//   }, [])
+
+//   return data;
+// }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -24,17 +43,14 @@ root.render(
         <Route exact path = "/" element = {<App/>} />
         <Route path = "/contact" element = {<Contact/>} />
         <Route path = "/about" element = {<About/>} />
-        {posts.map((post) => {
-          //console.log("/post/" + post.key.toString())
+        {/*{posts.map((post) => {
           return <Route key = {post.key} path = {"/post/" + post.key.toString()} element = {<Post post = {post}/>} />
-        })}
+        })} */}
+        <Route path = "/posts" element = {<Posts/>} />
       </Routes>
       <Footer />
     </BrowserRouter>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
