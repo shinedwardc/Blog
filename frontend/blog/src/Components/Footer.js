@@ -2,8 +2,8 @@
 
 const Footer = () => {
   return (
-    <footer>
-        <p style = {{padding: 10}}>&#169; All Rights Reserved</p>
+    <footer style = {{backgroundColor: "lightblue"}}>
+        <p style = {{padding: 10, margin: 10}}>&#169; All Rights Reserved</p>
     </footer>
   )
 }

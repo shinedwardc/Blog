@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import CardGroup from 'react-bootstrap/CardGroup'
+//import Card from 'react-bootstrap/Card';
+//import Button from 'react-bootstrap/Button';
+//import CardGroup from 'react-bootstrap/CardGroup'
 
 import '../Style/posts.css'
 
@@ -22,13 +22,9 @@ useEffect(() => {
 }, [])
 
   return (
-    <div>
-        <CardGroup>
-        {data && data.length > 0 && data.map((post,index) => (
-            // <div key = {post._id}>
-            //     <h1>{post.title}</h1>
-            //     <p>{post.text}</p>
-            // </div>          
+    <div className = "cards">
+        {/* <CardGroup>
+        {data && data.length > 0 && data.map((post,index) => (        
             <Card key = {post._id} bg = "light" border = "primary" style={{ width: '18rem' }}>
                 <Card.Body>
                     <Card.Title>{post.title}</Card.Title>
@@ -39,7 +35,14 @@ useEffect(() => {
                 </Card.Body>
             </Card>
         ))}
-        </CardGroup>
+        </CardGroup> */}
+        {data && data.length > 0 && data.map((post,index) => (
+            <div key = {post._id} className = "card">
+                <h2>{post.title}</h2>
+                <h5>{post.description}</h5>
+                <p>{post.text}</p>
+            </div>
+        ))}
     </div>
   )
 }

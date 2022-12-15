@@ -26,6 +26,9 @@ const Header = () => {
             <LinkContainer to = "/">
               <Nav.Link>Home</Nav.Link>
             </LinkContainer>
+            <LinkContainer to = "/posts">
+              <Nav.Link>Posts</Nav.Link>
+            </LinkContainer>
             <LinkContainer to="/contact">
               <Nav.Link>Contact</Nav.Link>
             </LinkContainer>
@@ -39,9 +42,6 @@ const Header = () => {
                 </LinkContainer>
               ))}
             </NavDropdown> */}
-            <LinkContainer to = "/posts">
-              <Nav.Link>Posts</Nav.Link>
-            </LinkContainer>
           </Nav>
           </Navbar.Collapse>
 

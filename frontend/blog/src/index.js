@@ -41,12 +41,12 @@ root.render(
       <Header />
       <Routes>
         <Route exact path = "/" element = {<App/>} />
+        <Route path = "/posts" element = {<Posts/>} />
         <Route path = "/contact" element = {<Contact/>} />
         <Route path = "/about" element = {<About/>} />
         {/*{posts.map((post) => {
           return <Route key = {post.key} path = {"/post/" + post.key.toString()} element = {<Post post = {post}/>} />
         })} */}
-        <Route path = "/posts" element = {<Posts/>} />
       </Routes>
       <Footer />
     </BrowserRouter>
