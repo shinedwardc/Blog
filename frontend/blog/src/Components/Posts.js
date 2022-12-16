@@ -39,6 +39,7 @@ const Posts = ({data}) => {
             <div key = {post._id} className = "card">
                 <h2>{post.title}</h2>
                 <h5>{post.description}</h5>
+                <img className = "image" src = {post.imgUrl} alt = "post" />
                 <p>{post.text}</p>
             </div>
         ))}

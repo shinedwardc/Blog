@@ -10,6 +10,7 @@ import Footer from './Components/Footer';
 
 import { useEffect, useState } from 'react';
 
+import './App.css'
 
 function App() {
 
@@ -30,21 +31,23 @@ function App() {
 
   return (
       <>
-        <Header />
-          <Routes>
-            <Route exact path = "/" element = {<Home/>} />
-            <Route path = "/posts" element = {<Posts data = {data}/>} />
-              {/* {data && data.length > 0 && data.map((post,index) => {
-                return <Route key = {post._id} path = {post.key} element = {<Post post = {post}/>} />           
-              })}
-            </Route> */}
-            <Route path = "/contact" element = {<Contact/>} />
-            <Route path = "/about" element = {<About/>} />
-            {/*{posts.map((post) => {
-              return <Route key = {post.key} path = {"/post/" + post.key.toString()} element = {<Post post = {post}/>} />
-            })} */}
-          </Routes>
-        <Footer />
+        <div className='content-container'>
+          <Header />
+            <Routes>
+              <Route exact path = "/" element = {<Home/>} />
+              <Route path = "/posts" element = {<Posts data = {data}/>} />
+                {/* {data && data.length > 0 && data.map((post,index) => {
+                  return <Route key = {post._id} path = {post.key} element = {<Post post = {post}/>} />           
+                })}
+              </Route> */}
+              <Route path = "/contact" element = {<Contact/>} />
+              <Route path = "/about" element = {<About/>} />
+              {/*{posts.map((post) => {
+                return <Route key = {post.key} path = {"/post/" + post.key.toString()} element = {<Post post = {post}/>} />
+              })} */}
+            </Routes>
+        </div>
+        <Footer/>
       </>
   );
 }
