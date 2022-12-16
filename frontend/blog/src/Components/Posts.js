@@ -40,7 +40,11 @@ const Posts = ({data}) => {
                 <h2>{post.title}</h2>
                 <h5>{post.description}</h5>
                 <img className = "image" src = {post.imgUrl} alt = "post" />
-                <p>{post.text}</p>
+                <br/>
+                <div className = "text">
+                    <p>{post.text}</p>
+                </div>
+                <br />
             </div>
         ))}
     </div>

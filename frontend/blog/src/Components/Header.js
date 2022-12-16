@@ -3,6 +3,10 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 //import NavDropdown from 'react-bootstrap/NavDropdown';
 //import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import InstagramIcon from '@mui/icons-material/Instagram';
+
 
 //import posts from '../Modules/Posts'
 
@@ -20,7 +24,7 @@ const Header = () => {
         <Navbar.Brand style = {{padding: 20}}>Blog</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto my-2 my-lg-0"
+          <Nav className="me-auto"
             style={{ maxHeight: '100px' }}
             navbarScroll>
             <LinkContainer to = "/">
@@ -42,6 +46,17 @@ const Header = () => {
                 </LinkContainer>
               ))}
             </NavDropdown> */}
+          </Nav>
+          <Nav>
+            <Nav.Link href = "https://www.linkedin.com/in/edward-shin-64156617a/">
+              {<LinkedInIcon/>}
+            </Nav.Link>
+            <Nav.Link href = "https://www.github.com/shinedwardc">
+              {<GitHubIcon/>}
+            </Nav.Link>
+            <Nav.Link href = "https://www.instagram.com/shinedwardc/">
+              {<InstagramIcon/>}
+            </Nav.Link>
           </Nav>
           </Navbar.Collapse>
 
