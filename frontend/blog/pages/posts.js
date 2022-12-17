@@ -3,7 +3,6 @@
 //import Button from 'react-bootstrap/Button';
 //import CardGroup from 'react-bootstrap/CardGroup'
 
-import '../Style/posts.css'
 
 const Posts = ({data}) => {
 

@@ -1,4 +1,4 @@
-import { LinkContainer } from 'react-router-bootstrap';
+//import { LinkContainer } from 'react-router-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 //import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -7,6 +7,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
+import Link from 'next/link';
 
 //import posts from '../Modules/Posts'
 
@@ -27,18 +28,10 @@ const Header = () => {
           <Nav className="me-auto"
             style={{ maxHeight: '100px' }}
             navbarScroll>
-            <LinkContainer to = "/">
-              <Nav.Link>Home</Nav.Link>
-            </LinkContainer>
-            <LinkContainer to = "/posts">
-              <Nav.Link>Posts</Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/contact">
-              <Nav.Link>Contact</Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/about">
-              <Nav.Link>About</Nav.Link>
-            </LinkContainer>
+            <Link className = "nav-link" href = "/">Home</Link>
+            <Link className = "nav-link" href = "/posts">Posts</Link>
+            <Link className = "nav-link" href = "/contact">Contact</Link>
+            <Link className = "nav-link" href = "/about">About</Link>
             {/* <NavDropdown title = {<MoreHorizRoundedIcon/>} id = "collapsible-nav-dropdown">
               {posts.map((post) => (
                 <LinkContainer key = {post.key} to = {PostLink(post)}>
@@ -47,7 +40,7 @@ const Header = () => {
               ))}
             </NavDropdown> */}
           </Nav>
-          <Nav>
+          {/* <Nav>
             <Nav.Link href = "https://www.linkedin.com/in/edward-shin-64156617a/">
               {<LinkedInIcon/>}
             </Nav.Link>
@@ -57,7 +50,7 @@ const Header = () => {
             <Nav.Link href = "https://www.instagram.com/shinedwardc/">
               {<InstagramIcon/>}
             </Nav.Link>
-          </Nav>
+          </Nav> */}
           </Navbar.Collapse>
 
     </Navbar>
