@@ -9,7 +9,12 @@ const Posts = () => {
  const [data, setData] = useState(null);
 
  useEffect(() => {
-     fetch('http://localhost:5000/posts')
+    fetch('http://localhost:3000/api/posts', {
+        method: "GET",
+        headers: {
+            "Content-type": "application/json",
+        }
+     })
      .then(response => response.json())
      .then((data) => {
          setData(data);
