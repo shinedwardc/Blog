@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import Head from 'next/head';
-import '../Style/app.css';
+import '../styles/app.css';
 
 import Layout from "../Components/layout"
 
