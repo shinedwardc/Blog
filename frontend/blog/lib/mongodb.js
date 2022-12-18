@@ -5,6 +5,7 @@ import { MongoClient } from 'mongodb'
 //console.log(process.env.DB_USERNAME);
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster.azwpfd2.mongodb.net/test`
 //const uri = process.env.MONGODB_URI
+console.log(uri);
 const options = {
   useUnifiedTopology: true,
   useNewUrlParser: true,
