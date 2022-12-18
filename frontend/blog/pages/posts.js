@@ -1,4 +1,3 @@
-import { resolveHref } from 'next/dist/shared/lib/router/router';
 import {useState, useEffect} from 'react';
 //import Card from 'react-bootstrap/Card';
 //import Button from 'react-bootstrap/Button';
@@ -10,20 +9,13 @@ const Posts = () => {
  const [data, setData] = useState(null);
 
  useEffect(() => {
-     fetch('http://localhost:3000/api/posts', {
-        method: "GET",
-        headers: {
-            "Content-type": "application/json",
-        }
-     })
+     fetch('http://localhost:5000/posts')
      .then(response => response.json())
      .then((data) => {
          setData(data);
-         resolve();
     })
      .catch((e) => {
          console.error(`An error occurred: ${e}`);
-         resolve();
      })
  }, [])
 
