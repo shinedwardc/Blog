@@ -19,9 +19,11 @@ const Posts = () => {
      .then(response => response.json())
      .then((data) => {
          setData(data);
+         resolve();
     })
      .catch((e) => {
          console.error(`An error occurred: ${e}`);
+         resolve();
      })
  }, [])
 
