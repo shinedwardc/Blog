@@ -16,7 +16,7 @@ const Contact = () => {
     });
     const onSubmit = (data) => {
         //console.log(data);
-        fetch('http://localhost:5000/contact', {
+        fetch('http://localhost:3000/api/contacts', {
             method: 'POST',
             mode: 'cors',
             headers: {
