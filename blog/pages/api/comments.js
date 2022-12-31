@@ -19,3 +19,9 @@ export default async function CommentHandler(req,res) {
             //console.log(req.body);
     }
 }
+
+export const config = {
+    api: {
+      externalResolver: true,
+    },
+  }

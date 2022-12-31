@@ -6,11 +6,11 @@ const Comments = ({comments}) => {
  //console.log(comments);
   return (
     <div>
-        { <ul>
+        <ul>
             {comments.map((comment) => (
                 <li key = {comment._id}>{comment.text}</li>
             ))}
-        </ul> }
+        </ul>
     </div>
   )
 }

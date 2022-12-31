@@ -3,8 +3,11 @@
 //import Button from 'react-bootstrap/Button';
 //import CardGroup from 'react-bootstrap/CardGroup'
 
+import Comments from "../Components/comments";
 
-const Posts = ({ data }) => {
+//import Comments from "../Components/comments";
+
+const Posts = ({ data, comments }) => {
 
  /*const [data, setData] = useState(null);
 
@@ -25,6 +28,7 @@ const Posts = ({ data }) => {
  }, [])*/
 
   return (
+    <>
     <div className = "cards">
         {data && data.length > 0 && data.map((post,index) => (
             <div key = {post._id} className = "card">
@@ -39,14 +43,27 @@ const Posts = ({ data }) => {
             </div>
         ))}
     </div>
+    <div className = "comment-section">
+        <Comments comments = {comments}/>
+    </div>
+    </>
   )
 }
 
 export async function getServerSideProps() {
-    const res = await fetch('http://localhost:3000/api/posts')
-    const data = await res.json();
+    // const res = await fetch('http://localhost:3000/api/posts')
+    // const data = await res.json();
 
-    return { props: { data } }
+    // return { props: { data } }
+    const [dataRes, commentsRes] = await Promise.all([
+        fetch('http://localhost:3000/api/posts'),
+        fetch('http://localhost:3000/api/comments')
+    ]);
+    const [data, comments] = await Promise.all([
+        dataRes.json(),
+        commentsRes.json()
+    ]);
+    return { props: { data, comments } }
 }
 
 export default Posts
