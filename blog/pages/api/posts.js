@@ -3,18 +3,19 @@ import clientPromise from "../../lib/mongodb";
 export default async function PostHandler(req,res) {
     const client = await clientPromise;
     const db = client.db('Blog');
-    switch (req.method){
-        case "GET":
-            const allPosts = await db.collection('Posts')
-            .find({})
-            .toArray((err,result) => {
-                if (err){
-                    res.status(400).send("Error");
-                }
-                else{
-                    res.json(result);
-                }
-            })
-            break;
-    }
+    const allPosts = await db.collection('Posts')
+    .find({})
+    .toArray((err,result) => {
+        if (err){
+            return res.status(400).send("Error");
+        }
+        res.json(result);
+        res.status(200).end();
+    })
 }
+
+export const config = {
+    api: {
+      externalResolver: true,
+    },
+  }

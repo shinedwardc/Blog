@@ -1,12 +1,12 @@
-import {useState, useEffect} from 'react';
+//import {useState, useEffect} from 'react';
 //import Card from 'react-bootstrap/Card';
 //import Button from 'react-bootstrap/Button';
 //import CardGroup from 'react-bootstrap/CardGroup'
 
 
-const Posts = () => {
+const Posts = ({ data }) => {
 
- const [data, setData] = useState(null);
+ /*const [data, setData] = useState(null);
 
  useEffect(() => {
     fetch('http://localhost:3000/api/posts', {
@@ -22,23 +22,10 @@ const Posts = () => {
      .catch((e) => {
          console.error(`An error occurred: ${e}`);
      })
- }, [])
+ }, [])*/
 
   return (
     <div className = "cards">
-        {/* <CardGroup>
-        {data && data.length > 0 && data.map((post,index) => (        
-            <Card key = {post._id} bg = "light" border = "primary" style={{ width: '18rem' }}>
-                <Card.Body>
-                    <Card.Title>{post.title}</Card.Title>
-                    <Card.Text>
-                        {post.text}
-                    </Card.Text>
-                    <Button variant="primary">Go to post</Button>
-                </Card.Body>
-            </Card>
-        ))}
-        </CardGroup> */}
         {data && data.length > 0 && data.map((post,index) => (
             <div key = {post._id} className = "card">
                 <h2>{post.title}</h2>
@@ -53,6 +40,13 @@ const Posts = () => {
         ))}
     </div>
   )
+}
+
+export async function getServerSideProps() {
+    const res = await fetch('http://localhost:3000/api/posts')
+    const data = await res.json();
+
+    return { props: { data } }
 }
 
 export default Posts
