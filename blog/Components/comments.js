@@ -10,7 +10,7 @@ const Comments = ({comments}) => {
             {comments.map((comment) => (
                 <li key = {comment._id}>{comment.text}</li>
             ))}
-        </ul> */}
+        </ul> }
     </div>
   )
 }
