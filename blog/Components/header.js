@@ -31,7 +31,7 @@ const Header = () => {
             <Link className = "nav-link" href = "/">Home</Link>
             <Link className = "nav-link" href = "/posts">Posts</Link>
             <Link className = "nav-link" href = "/contact">Contact</Link>
-            <Link className = "nav-link" href = "/about">About</Link>
+            <Link className = "nav-link" href = "/about">About Author</Link>
             {/* <NavDropdown title = {<MoreHorizRoundedIcon/>} id = "collapsible-nav-dropdown">
               {posts.map((post) => (
                 <LinkContainer key = {post.key} to = {PostLink(post)}>
@@ -40,7 +40,7 @@ const Header = () => {
               ))}
             </NavDropdown> */}
           </Nav>
-          {/* <Nav>
+          <Nav>
             <Nav.Link href = "https://www.linkedin.com/in/edward-shin-64156617a/">
               {<LinkedInIcon/>}
             </Nav.Link>
@@ -50,9 +50,8 @@ const Header = () => {
             <Nav.Link href = "https://www.instagram.com/shinedwardc/">
               {<InstagramIcon/>}
             </Nav.Link>
-          </Nav> */}
+          </Nav> 
           </Navbar.Collapse>
-
     </Navbar>
 
     // <Navbar bg = "light" expand = "lg">

@@ -3,10 +3,10 @@ import clientPromise from "../../lib/mongodb";
 export default async function CommentHandler(req,res) {
     const client = await clientPromise;
     const db = client.db('Blog');
+    const comments = await db.collection('Comments');
     switch (req.method){
         case "GET":
-            const comments = await db.collection('Comments')
-            .find({})
+            comments.find({})
             .toArray((err,result) => {
                 if (err){
                     res.status(400).send("Error");
@@ -17,6 +17,8 @@ export default async function CommentHandler(req,res) {
             })
             break;
             //console.log(req.body);
+        case "POST":
+            comments.insertOne({"Date": new Date(), ...req.body })
     }
 }
 
