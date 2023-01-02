@@ -31,7 +31,8 @@ const Comments = ({comments}) => {
  //console.log(comments);
   return (
     <div>
-        <div className = "form">
+        <div className = "comment-form">
+            <h3>Write a comment...</h3>
             <form onSubmit = {handleSubmit(onSubmit)}>
                 <label>Username</label>
                 <input type = "text" name = "username" {...register("Username")} />

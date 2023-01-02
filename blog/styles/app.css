@@ -27,6 +27,11 @@
     padding: 10px;
 }
 
+.comment-form {
+    text-align: center;
+    background-color: darkblue;
+}
+
 form label {
     display: block;
     margin-bottom: 0.5em;
