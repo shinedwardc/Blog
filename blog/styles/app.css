@@ -29,7 +29,10 @@
 
 .comment-form {
     text-align: center;
-    background-color: darkblue;
+    margin: 20px 0 10px 0;
+}
+textarea {
+    width: 50%;
 }
 
 form label {

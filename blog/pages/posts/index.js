@@ -3,9 +3,9 @@
 //import Button from 'react-bootstrap/Button';
 //import CardGroup from 'react-bootstrap/CardGroup'
 
-import Comments from "../Components/comments";
+import Comments from "../../Components/comments";
 
-//import Comments from "../Components/comments";
+import Link from "next/link";
 
 const Posts = ({ data, comments }) => {
 
@@ -31,16 +31,14 @@ const Posts = ({ data, comments }) => {
     <>
     <div className = "cards">
         {data && data.length > 0 && data.map((post,index) => (
+            <Link style = {{textDecoration: 'none'}} href = {"/posts/" + post.title}>
             <div key = {post._id} className = "card">
                 <h2>{post.title}</h2>
                 <h5>{post.description}</h5>
                 <img className = "image" src = {post.imgUrl} alt = "post" />
                 <br/>
-                <div className = "text">
-                    <p>{post.text}</p>
-                </div>
-                <br />
             </div>
+            </Link>
         ))}
     </div>
     <div className = "comment-section">
@@ -50,7 +48,7 @@ const Posts = ({ data, comments }) => {
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     // const res = await fetch('http://localhost:3000/api/posts')
     // const data = await res.json();
 

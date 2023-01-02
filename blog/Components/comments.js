@@ -40,7 +40,7 @@ const Comments = ({comments}) => {
                 <label>Title</label>
                 <input label = "email" {...register("Title")} />
                 <label>Body</label>
-                <input label = "text" width = "50" height = "50" {...register("Body")} />
+                <textarea label = "text" {...register("Body")} />
                 <input type = "submit"/>
             </form>
         </div>        
